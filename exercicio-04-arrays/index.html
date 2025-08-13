@@ -32,6 +32,10 @@
       thead {
         background-color: #f2f2f2;
       }
+
+      [data-js="disable"] {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -61,10 +65,12 @@
                 <th>Departamento</th>
                 <th>Importância</th>
                 <th>Ação</th>
+                <th data-js="disable">Valor</th>
+                <th data-js="disable">Duração</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr data-js="task-input">
                 <td>
                   <label for="descricao">Descrição:</label>
                   <textarea
@@ -101,10 +107,12 @@
                 </td>
                 <td>
                   <button>Adicionar tarefa</button>
-                  <!-- <div>
-                    <label for="task-delete">Deletar task</label>
-                    <input type="checkbox" name="task-delete" />
-                  </div> -->
+                </td>
+                <td data-js="disable">
+
+                </td>
+                <td data-js="disable">
+                  
                 </td>
               </tr>
             </tbody>
