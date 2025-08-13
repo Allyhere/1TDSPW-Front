@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 01 Arrays</title>
+    <script src="./script.js" defer></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 1.6;
+      }
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      section {
+        margin-top: 30px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      thead {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Camilo Micheletto - RM 564113</h1>
+
+      <h2>Configuração das tarefas</h2>
+      <div data-js="task-config">
+        <label for="enable-value">
+          Habilitar valor
+          <input type="checkbox" name="enable-value" id="enable-value" />
+        </label>
+        <label for="enable-duration">
+          Habilitar duração
+          <input type="checkbox" name="enable-duration" id="enable-duration" />
+        </label>
+      </div>
+
+      <section>
+        <h2>Lista de Tarefas</h2>
+        <form data-js="task-form">
+          <table data-js="task-table">
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Autor</th>
+                <th>Departamento</th>
+                <th>Importância</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label for="descricao">Descrição:</label>
+                  <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="3"
+                    required
+                  ></textarea>
+                </td>
+                <td>
+                  <label for="autor">Autor:</label>
+                  <input type="text" id="autor" name="autor" required />
+                </td>
+                <td>
+                  <label for="departamento">Departamento:</label>
+                  <select id="departamento" name="departamento" required>
+                    <option value="">Selecione um departamento</option>
+                    <option value="TI">TI</option>
+                    <option value="RH">Recursos Humanos</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Financeiro">Financeiro</option>
+                    <option value="Vendas">Vendas</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="importancia">Importância:</label>
+                  <select id="importancia" name="importancia" required>
+                    <option value="">Selecione a importância</option>
+                    <option value="low">Baixa</option>
+                    <option value="medium">Média</option>
+                    <option value="high">Alta</option>
+                    <option value="critical">Crítica</option>
+                  </select>
+                </td>
+                <td>
+                  <button>Adicionar tarefa</button>
+                  <!-- <div>
+                    <label for="task-delete">Deletar task</label>
+                    <input type="checkbox" name="task-delete" />
+                  </div> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
