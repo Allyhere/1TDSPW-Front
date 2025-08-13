@@ -10,11 +10,12 @@
         font-family: sans-serif;
         line-height: 1.6;
       }
+
       main {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px;
       }
+
       section {
         margin-top: 30px;
       }
@@ -23,12 +24,18 @@
         width: 100%;
         border-collapse: collapse;
       }
+
+      .table-container {
+        overflow: hidden;
+      }
+
       th,
       td {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
       }
+      
       thead {
         background-color: #f2f2f2;
       }
@@ -56,68 +63,72 @@
 
       <section>
         <h2>Lista de Tarefas</h2>
-        <form data-js="task-form">
-          <table data-js="task-table">
-            <thead>
-              <tr>
-                <th>Descrição</th>
-                <th>Autor</th>
-                <th>Departamento</th>
-                <th>Importância</th>
-                <th>Ação</th>
-                <th data-js="disable">Valor</th>
-                <th data-js="disable">Duração</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-js="task-input">
-                <td>
-                  <label for="descricao">Descrição:</label>
-                  <textarea
-                    id="descricao"
-                    name="descricao"
-                    rows="3"
-                    required
-                  ></textarea>
-                </td>
-                <td>
-                  <label for="autor">Autor:</label>
-                  <input type="text" id="autor" name="autor" required />
-                </td>
-                <td>
-                  <label for="departamento">Departamento:</label>
-                  <select id="departamento" name="departamento" required>
-                    <option value="">Selecione um departamento</option>
-                    <option value="TI">TI</option>
-                    <option value="RH">Recursos Humanos</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Financeiro">Financeiro</option>
-                    <option value="Vendas">Vendas</option>
-                  </select>
-                </td>
-                <td>
-                  <label for="importancia">Importância:</label>
-                  <select id="importancia" name="importancia" required>
-                    <option value="">Selecione a importância</option>
-                    <option value="low">Baixa</option>
-                    <option value="medium">Média</option>
-                    <option value="high">Alta</option>
-                    <option value="critical">Crítica</option>
-                  </select>
-                </td>
-                <td>
-                  <button>Adicionar tarefa</button>
-                </td>
-                <td data-js="disable">
-
-                </td>
-                <td data-js="disable">
-                  
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
+        <div class="table-container">
+          <form data-js="task-form">
+            <table data-js="task-table">
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th>Autor</th>
+                  <th>Departamento</th>
+                  <th>Importância</th>
+                  <th>Ação</th>
+                  <th data-js="disable" data-row="enable-value">Valor</th>
+                  <th data-js="disable" data-row="enable-duration">Duração</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-js="task-input">
+                  <td>
+                    <label for="descricao">Descrição:</label>
+                    <textarea
+                      id="descricao"
+                      name="descricao"
+                      rows="3"
+                      required
+                    ></textarea>
+                  </td>
+                  <td>
+                    <label for="autor">Autor:</label>
+                    <input type="text" id="autor" name="autor" required />
+                  </td>
+                  <td>
+                    <label for="departamento">Departamento:</label>
+                    <select id="departamento" name="departamento" required>
+                      <option value="">Selecione um departamento</option>
+                      <option value="TI">TI</option>
+                      <option value="RH">Recursos Humanos</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Financeiro">Financeiro</option>
+                      <option value="Vendas">Vendas</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="importancia">Importância:</label>
+                    <select id="importancia" name="importancia" required>
+                      <option value="">Selecione a importância</option>
+                      <option value="low">Baixa</option>
+                      <option value="medium">Média</option>
+                      <option value="high">Alta</option>
+                      <option value="critical">Crítica</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button>Adicionar tarefa</button>
+                  </td>
+                  <td data-js="disable" data-row="enable-value">
+                    <label for="values">Valores:</label>
+                    <input type="text" id="values" name="values" required />
+                  </td>
+                  <td data-js="disable" data-row="enable-duration">
+                    <label for="duration">Duração:</label>
+                    <input type="text" id="duration" name="duration" required />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
       </section>
     </main>
   </body>

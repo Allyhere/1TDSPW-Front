@@ -3,6 +3,19 @@ const taskTable = document.querySelector("[data-js=task-table]");
 const taskDelete = document.querySelector("[data-js=task-delete]");
 const taskConfig = document.querySelector("[data-js=task-config]");
 
+const CONFIG_ELEMENTS = {
+  "enable-value": document.querySelectorAll("[data-row='enable-value']"),
+  "enable-duration": document.querySelectorAll("[data-row='enable-duration']"),
+};
+
+const updateElementsByRowName = (rowName) => {
+  CONFIG_ELEMENTS[rowName].forEach((row) => {
+    const datasetValue = row.dataset.js === "enable" ? "disable" : "enable";
+
+    row.dataset.js = datasetValue;
+  });
+};
+
 const createTaskEntry = (formData) => {
   const row = document.createElement("tr");
   for (value of formData) {
@@ -45,4 +58,11 @@ taskForm.addEventListener("submit", (event) => {
 
   addTaskEntry(generateTaskTemplate);
   event.target.reset();
+});
+
+Array.from(taskConfig.querySelectorAll("input")).forEach((input) => {
+  input.addEventListener("click", ({ target }) => {
+    const rowName = target.name;
+    updateElementsByRowName(rowName);
+  });
 });
